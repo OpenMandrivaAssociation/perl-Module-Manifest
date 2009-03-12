@@ -17,6 +17,7 @@ BuildRequires: perl(File::Spec)
 BuildRequires: perl(Params::Util)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Test::Warn)
+BuildRequires: perl(Test::Exception)
 BuildArch: noarch
 BuildRoot:     %{_tmppath}/%{name}-%{version}
 
