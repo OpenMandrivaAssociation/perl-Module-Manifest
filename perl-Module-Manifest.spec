@@ -8,18 +8,17 @@ Release:       %{release}
 License:       GPL or Artistic
 Group:         Development/Perl
 Summary:       Parse and examine a Perl distribution MANIFEST file
-Source:        http://www.cpan.org/modules/by-module/Module/%{realname}-%{version}.tar.gz
 Url:           http://search.cpan.org/dist/%{realname}
-BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+Source:        http://www.cpan.org/modules/by-module/Module/%{realname}-%{version}.tar.gz
 BuildRequires: perl(Carp)
 BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(File::Basename)
 BuildRequires: perl(File::Spec)
 BuildRequires: perl(Params::Util)
 BuildRequires: perl(Test::More)
-
+BuildRequires: perl(Test::Warn)
 BuildArch: noarch
+BuildRoot:     %{_tmppath}/%{name}-%{version}
 
 %description
 *Module::Manifest* is a simple utility module created originally for use in
