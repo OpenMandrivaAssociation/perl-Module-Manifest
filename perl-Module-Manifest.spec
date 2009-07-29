@@ -1,15 +1,16 @@
-%define realname   Module-Manifest
-%define version    0.07
-%define release    %mkrel 1
+%define upstream_name    Module-Manifest
+%define upstream_version 0.07
 
-Name:          perl-%{realname}
-Version:       %{version}
-Release:       %{release}
-License:       GPL or Artistic
-Group:         Development/Perl
-Summary:       Parse and examine a Perl distribution MANIFEST file
-Url:           http://search.cpan.org/dist/%{realname}
-Source:        http://www.cpan.org/modules/by-module/Module/%{realname}-%{version}.tar.gz
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Parse and examine a Perl distribution MANIFEST file
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(Carp)
 BuildRequires: perl(ExtUtils::MakeMaker)
 BuildRequires: perl(File::Basename)
@@ -19,7 +20,7 @@ BuildRequires: perl(Test::More)
 BuildRequires: perl(Test::Warn)
 BuildRequires: perl(Test::Exception)
 BuildArch: noarch
-BuildRoot:     %{_tmppath}/%{name}-%{version}
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 *Module::Manifest* is a simple utility module created originally for use in
@@ -33,7 +34,7 @@ distribution _MANIFEST_ specification contains a couple of little
 idiosyncracies, such as line comments and space-seperated inline comments.
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
