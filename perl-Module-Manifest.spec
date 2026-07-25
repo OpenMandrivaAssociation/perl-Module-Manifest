@@ -1,15 +1,15 @@
 %define upstream_name    Module-Manifest
-%define upstream_version 1.08
+%define upstream_version 1.09
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	5
+Version:	%{upstream_version}
+Release:	1
 
 Summary:	Parse and examine a Perl distribution MANIFEST file
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Module/%{upstream_name}-%{upstream_version}.tar.gz
+Url:		https://github.com/karenetheridge/Module-Manifest
+Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/Module-Manifest-%{upstream_version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
