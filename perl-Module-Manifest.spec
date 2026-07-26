@@ -1,15 +1,13 @@
 %define upstream_name    Module-Manifest
-%define upstream_version 1.09
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	1.09
+Release:	2
 
 Summary:	Parse and examine a Perl distribution MANIFEST file
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/karenetheridge/Module-Manifest
-Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/Module-Manifest-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/E/ET/ETHER/Module-Manifest-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -35,7 +33,7 @@ distribution _MANIFEST_ specification contains a couple of little
 idiosyncracies, such as line comments and space-seperated inline comments.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -63,9 +61,7 @@ make test
 
 * Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 0.70.0-1mdv2010.0
 + Revision: 403866
-- rebuild using %%perl_convert_version
-
-* Sat May 02 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.07-1mdv2010.0
+- rebuild using %1.09 Sat May 02 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.07-1mdv2010.0
 + Revision: 370492
 - update to new version 0.07
 
